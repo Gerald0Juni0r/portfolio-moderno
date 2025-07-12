@@ -312,7 +312,7 @@ section {
     text-align: justify;
 }
 
-.about__image-placeholder {
+/* .about__image-placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -323,7 +323,13 @@ section {
     font-size: 6rem;
     font-weight: 700;
     color: var(--bg-color);
+} */
+
+.about_image-placeholder img {
+    width: 80%;
+    border-radius: 1rem;
 }
+
 
 .skills__grid {
     display: grid;

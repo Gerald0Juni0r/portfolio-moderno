@@ -1,6 +1,7 @@
 // src/components/About.jsx
 import React from 'react';
 import Section from './Section';
+import MinhaFoto from '../assets/img/MinhaFoto.jpg';
 
 const About = () => {
   return (
@@ -19,7 +20,7 @@ const About = () => {
           </p>
         </div>
         <div className="about__image-placeholder">
-          <span>G</span>
+          <img src={MinhaFoto} alt="Minha foto de terno olhando para a câmera" style={{ width: "80%", borderRadius: "1rem" }}/>
         </div>
       </div>
     </Section>

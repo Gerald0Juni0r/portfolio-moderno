@@ -4,9 +4,9 @@ import Section from './Section';
 import { IconGitHub, IconExternalLink } from './Icons';
 
 const projectsData = [
-  { title: "E-commerce Platform", description: "Uma plataforma completa de e-commerce com React, Node.js e MongoDB.", tags: ["React", "Node.js", "MongoDB", "Stripe"], github: "#", live: "#" },
-  { title: "Task Management App", description: "Aplicativo de gerenciamento de tarefas com drag & drop.", tags: ["React", "TypeScript", "Firebase"], github: "#", live: "#" },
-  { title: "Weather Dashboard", description: "Dashboard meteorológico com integração de APIs.", tags: ["Vue.js", "Chart.js", "API"], github: "#", live: "#" }
+  { title: "Em construção", description: "", tags: ["", "", ""], github: "#", live: "#" },
+  { title: "Em construção", description: "", tags: ["", "", ""], github: "#", live: "#" },
+  { title: "Em construção", description: "", tags: ["", "", ""], github: "#", live: "#" }
 ];
 
 const Projects = () => {
