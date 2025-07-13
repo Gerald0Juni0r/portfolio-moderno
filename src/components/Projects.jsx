@@ -8,7 +8,7 @@ const projectsData = [
   { 
     title: "Climora",
     image: climoraApp, 
-    description: "Um aplicativo de clima com busca em tempo real e previsão horária.", 
+    description: "Um aplicativo de clima com busca em tempo real.", 
     tags: ["React", "CSS3", "Axios", "API"], 
     github: "https://github.com/Gerald0Juni0r/climora-app", 
     live: "https://gerald0juni0r.github.io/climora-app/" 
