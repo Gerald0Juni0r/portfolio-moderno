@@ -397,6 +397,25 @@ section {
     color: var(--bg-color);
 }
 
+.project-card__image-container {
+    width: 100%;
+    height: 180px; 
+    overflow: hidden; /* Garante que a imagem não extrapole o card */
+}
+
+.project-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
+    object-position: top; 
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Efeito de zoom suave na imagem ao passar o mouse sobre o card */
+.project-card:hover .project-card__image {
+    transform: scale(1.05);
+}
+
 .project-card__content {
     display: flex;
     flex-direction: column;
