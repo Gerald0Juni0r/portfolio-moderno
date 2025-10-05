@@ -4,7 +4,6 @@ import Section from './Section';
 import { IconGitHub, IconExternalLink } from './Icons';
 import climoraApp from '../assets/img/climora-app.png'; 
 import Folium from '../assets/img/folium.png'; 
-import idontknow from '../assets/img/idontknow.png'; 
 
 const projectsData = [
   { 
