@@ -43,7 +43,7 @@ const projectsData = [
     image: null,
     description: "Novos projetos em breve...", 
     tags: [], 
-    github: "#", 
+    github: null, 
     live: "#" 
   },
   { 
