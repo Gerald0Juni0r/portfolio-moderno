@@ -40,9 +40,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth;  Fallback for iOS Safari < 15.4 handled via JS */
     scroll-padding-top: 100px;
-    scrollbar-width: none;
 }
 
 html::-webkit-scrollbar {
@@ -87,8 +86,8 @@ body.no-scroll {
 .card,
 .header__container {
     background: rgba(31, 41, 55, 0.45);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
@@ -180,15 +179,16 @@ body.no-scroll {
     background: transparent;
     border: 1px solid transparent;
     box-shadow: none;
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     transition: all 0.4s ease-in-out;
 }
 
 .main-header.scrolled .header__container {
     background: rgba(31, 41, 55, 0.45);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
@@ -678,8 +678,8 @@ section {
         width: 100%;
         padding: 0.5rem 0;
         background: rgba(31, 41, 55, 0.8);
-        backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: var(--border-radius-md);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -748,9 +748,6 @@ section {
     .about__image-placeholder {
         width: 60%;
         margin: 0 auto 0 auto;
-    }
-    .skill-card {
-        min-height: auto;
     }
     .contact__card {
         margin: 0;
