@@ -3,7 +3,8 @@ import React from 'react';
 import Section from './Section';
 import { IconGitHub, IconExternalLink } from './Icons';
 import climoraApp from '../assets/img/climora-app.png'; 
-import Folium from '../assets/img/folium.png'; 
+import Folium from '../assets/img/folium.png';  
+import LocArenas from '../assets/img/locarenas.png'; 
 
 const projectsData = [
   { 
@@ -17,18 +18,17 @@ const projectsData = [
   { 
     title: "Folium",
     image: Folium, 
-    description: "Um site para buscar, organizar e gerenciar o que você já leu, quer ler e dos seus favoritos.", 
+    description: "Um site para buscar, organizar e gerenciar livros que você já leu, quer ler e são seus favoritos.", 
     tags: ["React", "Tailwind CSS", "TypeScript", "API"], 
     github: "https://github.com/Gerald0Juni0r/folium-library", 
     live: "https://gerald0juni0r.github.io/folium-library/" 
   },
   { 
-    title: "Em construção", 
-    image: null,
-    description: "Novos projetos em breve...", 
-    tags: [], 
-    github: "#", 
-    live: "#" 
+    title: "LocArenas", 
+    image: LocArenas,
+    description: "plataforma web para o aluguel de campos de futebol society.", 
+    tags: ["React", "Tailwind CSS", "TypeScript", "PostgreSQL", "Supabase"], 
+    live: "https://preview--locarenas.lovable.app/" 
   },
   { 
     title: "Em construção", 
