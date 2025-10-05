@@ -3,6 +3,8 @@ import React from 'react';
 import Section from './Section';
 import { IconGitHub, IconExternalLink } from './Icons';
 import climoraApp from '../assets/img/climora-app.png'; 
+import Folium from '../assets/img/folium.png'; 
+import idontknow from '../assets/img/idontknow.png'; 
 
 const projectsData = [
   { 
@@ -14,8 +16,16 @@ const projectsData = [
     live: "https://gerald0juni0r.github.io/climora-app/" 
   },
   { 
-    title: "Em construção",
-    image: null, 
+    title: "Folium",
+    image: Folium, 
+    description: "Um site para buscar, organizar e gerenciar o que você já leu, quer ler e dos seus favoritos.", 
+    tags: ["React", "Tailwind CSS", "TypeScript", "API"], 
+    github: "https://github.com/Gerald0Juni0r/folium-library", 
+    live: "https://gerald0juni0r.github.io/folium-library/" 
+  },
+  { 
+    title: "Em construção", 
+    image: null,
     description: "Novos projetos em breve...", 
     tags: [], 
     github: "#", 
@@ -28,7 +38,23 @@ const projectsData = [
     tags: [], 
     github: "#", 
     live: "#" 
-  }
+  },
+  { 
+    title: "Em construção", 
+    image: null,
+    description: "Novos projetos em breve...", 
+    tags: [], 
+    github: "#", 
+    live: "#" 
+  },
+  { 
+    title: "Em construção", 
+    image: null,
+    description: "Novos projetos em breve...", 
+    tags: [], 
+    github: "#", 
+    live: "#" 
+  },
 ];
 
 const Projects = () => {
