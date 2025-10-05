@@ -180,7 +180,8 @@ body.no-scroll {
     background: transparent;
     border: 1px solid transparent;
     box-shadow: none;
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: all 0.4s ease-in-out;
 }
 
