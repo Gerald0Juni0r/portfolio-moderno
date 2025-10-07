@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.50a8bb9f.css",
-    "main.js": "/static/js/main.70720a01.js",
+    "main.js": "/static/js/main.ae312599.js",
     "static/media/locarenas.png": "/static/media/locarenas.d4ac1743adbd88460514.png",
     "static/media/folium.png": "/static/media/folium.0c827d71dac9fabc7697.png",
     "static/media/climora-app.png": "/static/media/climora-app.9b7de48f6d089432b63c.png",
     "static/media/MinhaFoto.jpg": "/static/media/MinhaFoto.937faebbdc92029c1e1f.jpg",
     "index.html": "/index.html",
     "main.50a8bb9f.css.map": "/static/css/main.50a8bb9f.css.map",
-    "main.70720a01.js.map": "/static/js/main.70720a01.js.map"
+    "main.ae312599.js.map": "/static/js/main.ae312599.js.map"
   },
   "entrypoints": [
     "static/css/main.50a8bb9f.css",
-    "static/js/main.70720a01.js"
+    "static/js/main.ae312599.js"
   ]
 }
