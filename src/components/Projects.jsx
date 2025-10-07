@@ -71,7 +71,10 @@ const Projects = () => {
                 {project.tags.filter(tag => tag).map(tag => <span key={tag}>{tag}</span>)}
               </div>
               <div className="project-card__links">
+                {/* Coloca link do GitHub SOMENTE se 'project.github' existir */}
+                {project.github && (
                 <a href={project.github} className="icon-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><IconGitHub small/></a>
+                )} 
                 <a href={project.live} className="icon-btn" aria-label="Live Demo" target="_blank" rel="noopener noreferrer"><IconExternalLink /></a>
               </div>
             </div>
