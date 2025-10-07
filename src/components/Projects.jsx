@@ -13,7 +13,7 @@ const projectsData = [
     description: "Um aplicativo de clima com busca em tempo real.", 
     tags: ["React", "CSS3", "Axios", "API"], 
     github: "https://github.com/Gerald0Juni0r/climora-app", 
-    live: "https://gerald0juni0r.github.io/climora-app/" 
+    live: "https://climora-app.vercel.app/" 
   },
   { 
     title: "Folium",
@@ -21,7 +21,7 @@ const projectsData = [
     description: "Um site para buscar, organizar e gerenciar livros que você já leu, quer ler e são seus favoritos.", 
     tags: ["React", "Tailwind CSS", "TypeScript", "API"], 
     github: "https://github.com/Gerald0Juni0r/folium-library", 
-    live: "https://gerald0juni0r.github.io/folium-library/" 
+    live: "https://folium-library.vercel.app/" 
   },
   { 
     title: "LocArenas", 
@@ -30,30 +30,14 @@ const projectsData = [
     tags: ["React", "Tailwind CSS", "TypeScript", "PostgreSQL", "Supabase"], 
     live: "https://preview--locarenas.lovable.app/" 
   },
-  { 
-    title: "Em construção", 
-    image: null,
-    description: "Novos projetos em breve...", 
-    tags: [], 
-    github: "#", 
-    live: "#" 
-  },
-  { 
-    title: "Em construção", 
-    image: null,
-    description: "Novos projetos em breve...", 
-    tags: [], 
-    github: null, 
-    live: "#" 
-  },
-  { 
-    title: "Em construção", 
-    image: null,
-    description: "Novos projetos em breve...", 
-    tags: [], 
-    github: "#", 
-    live: "#" 
-  },
+  // { 
+  //   title: "Em construção", 
+  //   image: null,
+  //   description: "Novos projetos em breve...", 
+  //   tags: [], 
+  //   github: "#", 
+  //   live: "#" 
+  // },
 ];
 
 const Projects = () => {
