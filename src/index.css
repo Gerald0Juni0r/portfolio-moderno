@@ -326,7 +326,10 @@ h1, h2, h3 { font-family: 'Sora', sans-serif; letter-spacing: -0.02em; line-heig
   .contact { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; text-align: center; }
   .contact__btns { justify-content: center; }
   .contact p { margin: 0 auto; }
-  .hero__buttons .btn, .contact__btns a { flex: 1; }
+  .hero__buttons { flex-direction: column; align-items: stretch; }
+  .hero__buttons .btn { width: 100%; }
+  .contact__btns a { flex: 1; justify-content: center; }
+  .codecard__photo { right: 8px; }
 }
 
 @media (max-width: 480px) {
