@@ -1,4 +1,4 @@
-import foto from '../assets/img/foto.jpg';
+import fotoAbout from '../assets/img/foto-about.jpg';
 import { IconPin } from './Icons';
 
 const stack = [
@@ -25,7 +25,7 @@ export default function About() {
           </div>
 
           <div className="bento__photo">
-            <img src={foto} alt="Geraldo Júnior" />
+            <img src={fotoAbout} alt="Geraldo Júnior" />
             <span><IconPin /> Recife, PE</span>
           </div>
 
