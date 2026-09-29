@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.e839a538.css",
-    "main.js": "/static/js/main.68750505.js",
+    "main.css": "/static/css/main.9fbe7374.css",
+    "main.js": "/static/js/main.18e41e5f.js",
+    "static/media/foto-about.jpg": "/static/media/foto-about.2985891c2b88d277c3a0.jpg",
     "static/media/foto.jpg": "/static/media/foto.abb2c408ca48d5fca9df.jpg",
     "static/media/locarenas.jpg": "/static/media/locarenas.09ed331c62b2a228476d.jpg",
     "static/media/folium.jpg": "/static/media/folium.1f8e5bd9641874ea6cea.jpg",
@@ -9,7 +10,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.e839a538.css",
-    "static/js/main.68750505.js"
+    "static/css/main.9fbe7374.css",
+    "static/js/main.18e41e5f.js"
   ]
 }
