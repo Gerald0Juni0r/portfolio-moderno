@@ -1,25 +1,24 @@
-// src/components/Contact.jsx
-import React from 'react';
-import Section from './Section';
 import { IconLinkedIn, IconGitHub } from './Icons';
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <Section id="contact" className="content-section">
-      <div className="card contact__card">
-        <h2>Vamos <span className="highlight-text">Conversar?</span></h2>
-        <p>Estou aberto a oportunidades de estágio, vagas júnior e projetos em desenvolvimento web ou Python. Me chama no LinkedIn!</p>
-        <div className="contact__buttons">
-          <a href="https://www.linkedin.com/in/gerald0juni0r/" className="btn btn--secondary" target="_blank" rel="noopener noreferrer">
-            <IconLinkedIn /> LinkedIn
-          </a>
-          <a href="https://github.com/Gerald0Juni0r" className="btn btn--secondary" target="_blank" rel="noopener noreferrer">
-            <IconGitHub /> GitHub
-          </a>
+    <section id="contato" className="section">
+      <div className="container">
+        <div className="contact">
+          <div>
+            <h2>Vamos conversar?</h2>
+            <p>Estou aberto a estágio, vagas júnior e projetos em desenvolvimento web ou Python.</p>
+          </div>
+          <div className="contact__btns">
+            <a href="https://www.linkedin.com/in/gerald0juni0r/" className="fill" target="_blank" rel="noreferrer">
+              <IconLinkedIn /> LinkedIn
+            </a>
+            <a href="https://github.com/Gerald0Juni0r" className="out" target="_blank" rel="noreferrer">
+              <IconGitHub /> GitHub
+            </a>
+          </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
-};
-
-export default Contact;
+}

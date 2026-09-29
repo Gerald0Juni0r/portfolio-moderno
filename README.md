@@ -1,32 +1,32 @@
 # Portfólio · Geraldo Júnior
 
-Site pessoal com projetos, skills e trajetória: **https://geraldo.is-a.dev/**
+Site pessoal com hero, sobre, trajetória, skills e projetos: **https://geraldo.is-a.dev/**
 
 ![Preview do portfólio](public/og-image.png)
 
 ## Stack
 
 - React 19 (Create React App)
-- CSS puro com variáveis e efeito glassmorphism
-- Deploy no GitHub Pages com domínio `is-a.dev`
+- CSS puro com variáveis, tema escuro e layout responsivo (bento + timeline)
+- Fontes: Sora, DM Sans e JetBrains Mono
+- Deploy automático no GitHub Pages via GitHub Actions, domínio `is-a.dev`
 
 ## Rodando localmente
 
 ```bash
 npm install
 npm start        # http://localhost:3000
-npm test         # testes
 npm run build    # build de produção (sem source maps, via .env)
-npm run deploy   # publica a pasta build na branch gh-pages
 ```
 
 ## Estrutura
 
 ```
 src/
-  components/   Header, Hero, About, Experience, Skills, Projects, Contact, Footer
-  assets/img/   foto e screenshots dos projetos
+  components/   Header, Hero, About, Experience, Skills, Projects, Contact, Footer, ScrollToTopButton, Icons
+  assets/img/   foto, logo e thumbs dos projetos
+  index.css     design system + estilos
 public/
-  index.html    meta tags, Open Graph e fonte Poppins
+  index.html    meta tags, Open Graph e fontes
   og-image.png  imagem de preview do link
 ```

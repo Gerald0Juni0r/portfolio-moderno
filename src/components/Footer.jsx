@@ -1,15 +1,11 @@
-// src/components/Footer.jsx
-import React from 'react';
-
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className='main-footer'>
-      <div className='container'>
-        <p>© {currentYear} Geraldo Júnior · Feito com React e muito café</p>
+    <footer className="footer">
+      <div className="container footer__inner">
+        <span>© {year} Geraldo Júnior</span>
+        <span>Feito com React · geraldo.is-a.dev</span>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

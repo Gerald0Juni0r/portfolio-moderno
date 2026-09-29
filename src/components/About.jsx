@@ -1,49 +1,62 @@
-// src/components/About.jsx
-import React from 'react';
-import Section from './Section';
-import MinhaFoto from '../assets/img/MinhaFoto.jpg';
+import foto from '../assets/img/foto.jpg';
+import { IconPin } from './Icons';
 
-const education = [
-  { course: 'Análise e Desenvolvimento de Sistemas', place: 'CESAR School', status: 'Em andamento' },
-  { course: 'Ciência da Computação (Bacharelado)', place: 'UNINASSAU', status: 'Concluído' },
+const stack = [
+  { title: 'Frontend', items: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML e CSS'] },
+  { title: 'Backend & Dados', items: ['Python', 'Node.js', 'Java', 'PostgreSQL', 'Supabase'] },
+  { title: 'IA', items: ['Visão Computacional', 'Deep Learning', 'OpenCV', 'Jupyter'] },
+  { title: 'Ferramentas', items: ['Git e GitHub', 'Docker', 'Linux', 'AWS', 'Figma'] },
 ];
 
-const About = () => {
+export default function About() {
   return (
-    <Section id="about" className="content-section">
-      <div className="about__container card">
-        <div className="about__text">
-          <h2>Sobre <span className="highlight-text">Mim</span></h2>
-          <p>
-            Sou Geraldo Júnior, desenvolvedor de Recife, bacharel em Ciência da Computação
-            e estudante de Análise e Desenvolvimento de Sistemas na CESAR School.
-          </p>
-          <p>
-            Hoje atuo com pesquisa e desenvolvimento, criando soluções em Python com
-            inteligência artificial. Em paralelo, construo aplicações web com React,
-            TypeScript e Supabase, do layout ao banco de dados.
-          </p>
-          <p>
-            Já passei por estágios em engenharia de sistemas e em engenharia de dados na nuvem,
-            o que me deu base em documentação técnica, análise de dados e metodologias ágeis.
-          </p>
-
-          <h3 className="about__subtitle">Formação</h3>
-          <ul className="about__education">
-            {education.map((item) => (
-              <li key={item.course}>
-                <strong>{item.course}</strong>
-                <span>{item.place} · {item.status}</span>
-              </li>
-            ))}
-          </ul>
+    <section id="sobre" className="section">
+      <div className="container">
+        <div className="section__head">
+          <span className="eyebrow">01 · Sobre</span>
+          <h2 className="section__title">Quem sou</h2>
         </div>
-        <div className="about__image-placeholder">
-          <img src={MinhaFoto} alt="Foto de Geraldo Júnior" className="about__photo" />
+
+        <div className="bento">
+          <div className="card bento__about">
+            <p className="lead">Sou desenvolvedor de Recife, bacharel em Ciência da Computação e estudante de Análise e Desenvolvimento de Sistemas na CESAR School.</p>
+            <p>Hoje atuo em pesquisa e desenvolvimento, criando soluções em Python com inteligência artificial. Em paralelo, construo aplicações web com React, TypeScript e Supabase, do layout ao banco de dados.</p>
+            <p>Já passei por estágios em engenharia de sistemas e em dados na nuvem, o que me deu base em documentação técnica, análise de dados e metodologias ágeis.</p>
+          </div>
+
+          <div className="bento__photo">
+            <img src={foto} alt="Geraldo Júnior" />
+            <span><IconPin /> Recife, PE</span>
+          </div>
+
+          <div className="card bento__stack">
+            <h3>Stack</h3>
+            <div className="stackgrid">
+              {stack.map((c) => (
+                <div key={c.title}>
+                  <h4>{c.title}</h4>
+                  <div className="tags">
+                    {c.items.map((i) => <span key={i} className="chip">{i}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="card bento__edu">
+            <h3>Formação</h3>
+            <div className="edu-item">
+              <strong>Análise e Desenvolvimento de Sistemas</strong>
+              <span>CESAR School · em andamento</span>
+            </div>
+            <hr />
+            <div className="edu-item">
+              <strong>Ciência da Computação</strong>
+              <span>UNINASSAU · bacharelado concluído</span>
+            </div>
+          </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
-};
-
-export default About;
+}

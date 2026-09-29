@@ -1,86 +1,61 @@
-// src/components/Header.jsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import logo from '../assets/img/logo.png';
 
-const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'Sobre mim' },
-  { href: '#experience', label: 'Trajetória' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projetos' },
-  { href: '#contact', label: 'Contato' }
+const links = [
+  { href: '#home', label: 'Início' },
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#trajetoria', label: 'Trajetória' },
+  { href: '#projetos', label: 'Projetos' },
 ];
 
-const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('#home');
+export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveLink(`#${entry.target.id}`);
-        }
-      });
-    }, { rootMargin: '-40% 0px -60% 0px' });
-    sections.forEach(section => observer.observe(section));
-    return () => sections.forEach(section => observer.unobserve(section));
-  }, []);
-  
-  const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev);
-    document.body.classList.toggle('no-scroll', !isMenuOpen);
-  };
-  
-  const closeMenu = () => {
-    setIsMenuOpen(false);
+  const close = () => {
+    setOpen(false);
     document.body.classList.remove('no-scroll');
+  };
+  const toggle = () => {
+    setOpen((v) => {
+      document.body.classList.toggle('no-scroll', !v);
+      return !v;
+    });
   };
 
   return (
-    <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="header__container">
-        <a href="#home" className="header__logo" onClick={closeMenu}>
-          <img src="https://uploads.onecompiler.io/43hvcrmwf/43q7v2k9u/g__1_-removebg-preview.png" alt="Logo de Geraldo.dev" className="header__logo-img" />
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container header__inner">
+        <a href="#home" className="header__logo" onClick={close} aria-label="Início">
+          <img src={logo} alt="" />
+          <b>geraldo<span>.dev</span></b>
         </a>
-        
-        <nav className={`header__nav ${isMenuOpen ? 'is-open' : ''}`} id="main-nav">
+
+        <nav className={`nav ${open ? 'open' : ''}`} aria-label="Principal">
           <ul>
-            {navLinks.map(link => (
-              <li key={link.href}>
-                <a 
-                  href={link.href} 
-                  className={`nav-link ${activeLink === link.href ? 'active' : ''}`}
-                  onClick={closeMenu}
-                >
-                  {link.label}
-                </a>
-              </li>
+            {links.map((l) => (
+              <li key={l.href}><a href={l.href} onClick={close}>{l.label}</a></li>
             ))}
+            <li><a href="#contato" className="nav__cta" onClick={close}>Contato</a></li>
           </ul>
         </nav>
 
-        <button 
-          onClick={toggleMenu}
-          className={`hamburger-menu ${isMenuOpen ? 'is-active' : ''}`} 
-          aria-label="Abrir menu" 
-          aria-expanded={isMenuOpen}
-          aria-controls="main-nav"
+        <button
+          type="button"
+          className={`burger ${open ? 'open' : ''}`}
+          onClick={toggle}
+          aria-label="Abrir menu"
+          aria-expanded={open}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </header>
   );
-};
-
-export default Header;
+}
