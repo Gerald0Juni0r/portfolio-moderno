@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.d1bdd707.css",
+    "main.css": "/static/css/main.e839a538.css",
     "main.js": "/static/js/main.68750505.js",
     "static/media/foto.jpg": "/static/media/foto.abb2c408ca48d5fca9df.jpg",
     "static/media/locarenas.jpg": "/static/media/locarenas.09ed331c62b2a228476d.jpg",
@@ -9,7 +9,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.d1bdd707.css",
+    "static/css/main.e839a538.css",
     "static/js/main.68750505.js"
   ]
 }
