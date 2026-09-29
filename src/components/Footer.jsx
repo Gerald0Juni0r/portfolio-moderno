@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className='main-footer'>
       <div className='container'>
-        <p>© {currentYear} Geraldo.dev - Feito com ❤️ e muito café</p>
+        <p>© {currentYear} Geraldo Júnior · Feito com React e muito café</p>
       </div>
     </footer>
   );

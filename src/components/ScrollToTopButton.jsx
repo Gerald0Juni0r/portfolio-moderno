@@ -6,7 +6,7 @@ const ScrollToTopButton = () => {
 
     // Mostra o botão quando o scroll passa de 300px
     const toggleVisibility = () => {
-        if (window.pageYOffset > 300) {
+        if (window.scrollY > 300) {
             setIsVisible(true);
         } else {
             setIsVisible(false);

@@ -1,13 +1,13 @@
 // src/components/Skills.jsx
 import React from 'react';
 import Section from './Section';
-import { IconCode, IconServer, IconSmartphone, IconPenTool } from './Icons'; // Ícones continuam úteis!
+import { IconCode, IconServer, IconCpu, IconTool } from './Icons';
 
 const skillsData = [
-  { title: "Frontend", icon: <IconCode />, skills: ["HTML", "CSS", "JavaScript", "React"] },
-  { title: "Backend", icon: <IconServer />, skills: ["Node.js", "Java", "Spring Boot", "Python"] },
-  { title: "Mobile & DevOps", icon: <IconSmartphone />, skills: ["React Native", "Docker", "Git", "GitHub"] },
-  { title: "Design & UI", icon: <IconPenTool />, skills: ["Figma", "UI/UX Principles", "Prototyping"] }
+  { title: "Frontend", icon: <IconCode />, skills: ["HTML e CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS"] },
+  { title: "Backend & Dados", icon: <IconServer />, skills: ["Python", "Node.js", "Java", "PostgreSQL", "Supabase"] },
+  { title: "IA & Dados", icon: <IconCpu />, skills: ["Visão Computacional", "Deep Learning", "OpenCV", "Jupyter"] },
+  { title: "Ferramentas", icon: <IconTool />, skills: ["Git e GitHub", "Docker", "Linux", "AWS", "Figma"] }
 ];
 
 const Skills = () => {

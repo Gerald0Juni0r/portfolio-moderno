@@ -3,6 +3,11 @@ import React from 'react';
 import Section from './Section';
 import MinhaFoto from '../assets/img/MinhaFoto.jpg';
 
+const education = [
+  { course: 'Análise e Desenvolvimento de Sistemas', place: 'CESAR School', status: 'Em andamento' },
+  { course: 'Ciência da Computação (Bacharelado)', place: 'UNINASSAU', status: 'Concluído' },
+];
+
 const About = () => {
   return (
     <Section id="about" className="content-section">
@@ -10,17 +15,31 @@ const About = () => {
         <div className="about__text">
           <h2>Sobre <span className="highlight-text">Mim</span></h2>
           <p>
-            Oi, eu sou Geraldo Júnior, desenvolvedor full stack apaixonado por tecnologia e programação. Gosto de transformar ideias em código e estou sempre aprendendo algo novo para melhorar minhas habilidades.
+            Sou Geraldo Júnior, desenvolvedor de Recife, bacharel em Ciência da Computação
+            e estudante de Análise e Desenvolvimento de Sistemas na CESAR School.
           </p>
           <p>
-            Já trabalhei em projetos que vão de sites simples a aplicações mais complexas, explorando diferentes tecnologias e buscando soluções eficientes. Minha motivação vem do desafio de criar algo útil e bem feito.
+            Hoje atuo com pesquisa e desenvolvimento, criando soluções em Python com
+            inteligência artificial. Em paralelo, construo aplicações web com React,
+            TypeScript e Supabase, do layout ao banco de dados.
           </p>
           <p>
-            Se quiser saber mais sobre meu trabalho, dá uma olhada nos meus projetos ou entre em contato!
+            Já passei por estágios em engenharia de sistemas e em engenharia de dados na nuvem,
+            o que me deu base em documentação técnica, análise de dados e metodologias ágeis.
           </p>
+
+          <h3 className="about__subtitle">Formação</h3>
+          <ul className="about__education">
+            {education.map((item) => (
+              <li key={item.course}>
+                <strong>{item.course}</strong>
+                <span>{item.place} · {item.status}</span>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="about__image-placeholder">
-          <img src={MinhaFoto} alt="Minha foto de terno olhando para a câmera" style={{ width: "80%", borderRadius: "1rem" }}/>
+          <img src={MinhaFoto} alt="Foto de Geraldo Júnior" className="about__photo" />
         </div>
       </div>
     </Section>
