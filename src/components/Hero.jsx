@@ -14,33 +14,63 @@ const codeHtml = [
 ].join('\n');
 
 export default function Hero() {
+  const sectionRef = useRef(null);
+  const bgRef = useRef(null);
   const tiltRef = useRef(null);
 
   useEffect(() => {
-    const el = tiltRef.current;
-    if (!el) return;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     if (reduce || !fine) return;
-    const onMove = (e) => {
-      const r = el.getBoundingClientRect();
+
+    const section = sectionRef.current;
+    const bg = bgRef.current;
+    const card = tiltRef.current;
+
+    // brilhos seguem o mouse (parallax suave)
+    const onSectionMove = (e) => {
+      const r = section.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width - 0.5;
       const py = (e.clientY - r.top) / r.height - 0.5;
-      el.style.transform = `perspective(900px) rotateY(${px * 7}deg) rotateX(${-py * 7}deg)`;
+      if (bg) bg.style.transform = `translate(${px * 40}px, ${py * 40}px)`;
     };
-    const onLeave = () => { el.style.transform = ''; };
-    el.addEventListener('mousemove', onMove);
-    el.addEventListener('mouseleave', onLeave);
+    const onSectionLeave = () => {
+      if (bg) bg.style.transform = '';
+    };
+
+    // tilt 3D no cartão de código
+    const onCardMove = (e) => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(900px) rotateY(${px * 8}deg) rotateX(${-py * 8}deg)`;
+    };
+    const onCardLeave = () => {
+      card.style.transform = 'perspective(900px) rotateY(0deg) rotateX(0deg)';
+    };
+
+    section.addEventListener('mousemove', onSectionMove);
+    section.addEventListener('mouseleave', onSectionLeave);
+    if (card) {
+      card.addEventListener('mousemove', onCardMove);
+      card.addEventListener('mouseleave', onCardLeave);
+    }
     return () => {
-      el.removeEventListener('mousemove', onMove);
-      el.removeEventListener('mouseleave', onLeave);
+      section.removeEventListener('mousemove', onSectionMove);
+      section.removeEventListener('mouseleave', onSectionLeave);
+      if (card) {
+        card.removeEventListener('mousemove', onCardMove);
+        card.removeEventListener('mouseleave', onCardLeave);
+      }
     };
   }, []);
 
   return (
-    <section id="home" className="hero">
-      <div className="hero__glow" aria-hidden="true"></div>
-      <div className="hero__glow2" aria-hidden="true"></div>
+    <section id="home" className="hero" ref={sectionRef}>
+      <div className="hero__bg" ref={bgRef} aria-hidden="true">
+        <div className="hero__glow"></div>
+        <div className="hero__glow2"></div>
+      </div>
 
       <div className="container hero__grid">
         <div className="hero__col">

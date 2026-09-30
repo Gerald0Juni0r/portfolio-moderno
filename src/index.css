@@ -25,6 +25,21 @@ body {
   font-family: 'DM Sans', system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* não permitir selecionar texto nem arrastar/baixar imagens */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
 }
 
 body.no-scroll { overflow: hidden; }
@@ -117,6 +132,7 @@ h1, h2, h3 { font-family: 'Sora', sans-serif; letter-spacing: -0.02em; line-heig
 /* =========================== hero =========================== */
 .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 104px 0 64px; overflow: hidden; }
 .hero > .container { width: 100%; }
+.hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; will-change: transform; transition: transform .25s ease-out; }
 .hero__glow, .hero__glow2 { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
 .hero__glow { top: -260px; right: -120px; width: 760px; height: 760px; background: radial-gradient(closest-side, rgba(45,212,191,0.16), rgba(13,17,23,0)); }
 .hero__glow2 { top: 120px; left: -300px; width: 640px; height: 640px; background: radial-gradient(closest-side, rgba(56,189,248,0.10), rgba(13,17,23,0)); }
@@ -355,7 +371,9 @@ h1, h2, h3 { font-family: 'Sora', sans-serif; letter-spacing: -0.02em; line-heig
 .hero__col > *:nth-child(5) { animation-delay: .28s; }
 .hero__col > *:nth-child(6) { animation-delay: .34s; }
 .hero__col > *:nth-child(7) { animation-delay: .40s; }
-.codecard { animation: fadeUp .8s ease .22s both; transform-style: preserve-3d; will-change: transform; }
+/* entrada no filho, para o transform do tilt (no .codecard) não ser sobrescrito */
+.codecard__window, .codecard__photo { animation: fadeUp .8s ease .22s both; }
+.codecard { transform-style: preserve-3d; will-change: transform; transition: transform .12s ease-out; }
 
 /* aparecer ao rolar */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
@@ -368,5 +386,5 @@ h1, h2, h3 { font-family: 'Sora', sans-serif; letter-spacing: -0.02em; line-heig
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
-  .hero__col > *, .codecard { opacity: 1 !important; transform: none !important; }
+  .hero__col > *, .codecard__window, .codecard__photo { opacity: 1 !important; transform: none !important; }
 }
