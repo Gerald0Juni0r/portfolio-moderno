@@ -11,12 +11,12 @@ export default function Skills() {
   return (
     <section id="skills" className="section">
       <div className="container">
-        <div className="section__head">
+        <div className="section__head reveal">
           <span className="eyebrow">Skills</span>
           <h2 className="section__title">Minhas skills</h2>
         </div>
 
-        <div className="skills">
+        <div className="skills reveal">
           {groups.map((g) => (
             <div className="card skill" key={g.title}>
               <div className="skill__head">{g.icon}<h3>{g.title}</h3></div>

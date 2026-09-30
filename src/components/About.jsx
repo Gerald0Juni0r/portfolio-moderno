@@ -12,12 +12,12 @@ export default function About() {
   return (
     <section id="sobre" className="section">
       <div className="container">
-        <div className="section__head">
+        <div className="section__head reveal">
           <span className="eyebrow">01 · Sobre</span>
           <h2 className="section__title">Quem sou</h2>
         </div>
 
-        <div className="bento">
+        <div className="bento reveal">
           <div className="card bento__about">
             <p className="lead">Sou desenvolvedor de Recife, bacharel em Ciência da Computação e estudante de Análise e Desenvolvimento de Sistemas na CESAR School.</p>
             <p>Hoje atuo em pesquisa e desenvolvimento, criando soluções em Python com inteligência artificial. Em paralelo, construo aplicações web com React, TypeScript e Supabase, do layout ao banco de dados.</p>

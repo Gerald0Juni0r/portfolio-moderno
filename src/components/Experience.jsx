@@ -23,12 +23,12 @@ export default function Experience() {
   return (
     <section id="trajetoria" className="section">
       <div className="container">
-        <div className="section__head">
+        <div className="section__head reveal">
           <span className="eyebrow">02 · Trajetória</span>
           <h2 className="section__title">Por onde passei</h2>
         </div>
 
-        <div className="timeline">
+        <div className="timeline reveal">
           {data.map((it) => (
             <div className="tl-item" key={it.role}>
               <span className={`tl-dot ${it.now ? 'now' : 'past'}`}></span>

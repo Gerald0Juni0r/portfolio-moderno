@@ -13,13 +13,13 @@ export default function Projects() {
   return (
     <section id="projetos" className="section">
       <div className="container projects">
-        <div className="section__head">
+        <div className="section__head reveal">
           <span className="eyebrow">03 · Projetos</span>
           <h2 className="section__title">O que eu construí</h2>
         </div>
 
         {/* Destaque: Quitô */}
-        <article className="card featured">
+        <article className="card featured reveal">
           <div className="featured__col">
             <span className="featured__badge">Projeto em destaque</span>
             <h3 className="featured__title">Quitô</h3>
@@ -71,7 +71,7 @@ export default function Projects() {
         </article>
 
         {/* Grade */}
-        <div className="pgrid">
+        <div className="pgrid reveal">
           {/* MarkusApp */}
           <article className="card pcard">
             <div className="mk" aria-hidden="true">

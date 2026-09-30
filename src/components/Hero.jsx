@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import foto from '../assets/img/foto.jpg';
 import { IconArrow, IconLinkedIn, IconGitHub } from './Icons';
 
@@ -13,6 +14,29 @@ const codeHtml = [
 ].join('\n');
 
 export default function Hero() {
+  const tiltRef = useRef(null);
+
+  useEffect(() => {
+    const el = tiltRef.current;
+    if (!el) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (reduce || !fine) return;
+    const onMove = (e) => {
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = `perspective(900px) rotateY(${px * 7}deg) rotateX(${-py * 7}deg)`;
+    };
+    const onLeave = () => { el.style.transform = ''; };
+    el.addEventListener('mousemove', onMove);
+    el.addEventListener('mouseleave', onLeave);
+    return () => {
+      el.removeEventListener('mousemove', onMove);
+      el.removeEventListener('mouseleave', onLeave);
+    };
+  }, []);
+
   return (
     <section id="home" className="hero">
       <div className="hero__glow" aria-hidden="true"></div>
@@ -38,7 +62,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="codecard">
+        <div className="codecard" ref={tiltRef}>
           <div className="codecard__window">
             <div className="codecard__bar">
               <i className="r"></i><i className="y"></i><i className="g"></i>

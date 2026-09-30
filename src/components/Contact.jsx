@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <section id="contato" className="section">
       <div className="container">
-        <div className="contact">
+        <div className="contact reveal">
           <div>
             <h2>Vamos conversar?</h2>
             <p>Estou aberto a estágio, vagas júnior e projetos em desenvolvimento web ou Python.</p>
